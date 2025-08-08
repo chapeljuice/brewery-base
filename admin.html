@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula Brewing - Content Manager</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Formula Brewing - Content Manager</h1>
+            <p>Update your website content easily through Google Sheets</p>
+        </header>
+
+        <div class="content-sections">
+            <!-- Beer Data Management -->
+            <section class="content-section">
+                <h2>🍺 Beer Data Management</h2>
+                <div class="sheet-info">
+                    <h3>Current Setup</h3>
+                    <p>Your beer data is managed through Google Sheets. This is the easiest way to update your beer list!</p>
+                    
+                    <div class="setup-steps">
+                        <h4>How to Update Beer Data:</h4>
+                        <ol>
+                            <li><strong>Open your Google Sheet</strong> (link provided below)</li>
+                            <li><strong>Edit the beer information</strong> in the spreadsheet</li>
+                            <li><strong>Save the changes</strong> - they appear on your website instantly!</li>
+                        </ol>
+                    </div>
+
+                    <div class="sheet-links">
+                        <a href="#" id="beer-sheet-link" class="sheet-button" target="_blank">
+                            📊 Open Beer Data Sheet
+                        </a>
+                        <button onclick="copySheetId()" class="copy-button">
+                            📋 Copy Sheet ID
+                        </button>
+                    </div>
+
+                    <div class="sheet-template">
+                        <h4>📋 Required Columns:</h4>
+                        <table class="template-table">
+                            <thead>
+                                <tr>
+                                    <th>Column A</th>
+                                    <th>Column B</th>
+                                    <th>Column C</th>
+                                    <th>Column D</th>
+                                    <th>Column E</th>
+                                    <th>Column F</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Beer Name</td>
+                                    <td>Beer Type</td>
+                                    <td>ABV</td>
+                                    <td>IBU</td>
+                                    <td>Status</td>
+                                    <td>Description</td>
+                                </tr>
+                                <tr>
+                                    <td>Formula IPA</td>
+                                    <td>India Pale Ale</td>
+                                    <td>6.5%</td>
+                                    <td>65</td>
+                                    <td>available</td>
+                                    <td>A bold, hop-forward IPA...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="status-note">Status options: <code>available</code>, <code>limited</code>, <code>out</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Website Content Management -->
+            <section class="content-section">
+                <h2>🌐 Website Content Management</h2>
+                <div class="content-tabs">
+                    <button class="tab-button active" onclick="showTab('hero')">Hero Section</button>
+                    <button class="tab-button" onclick="showTab('about')">About Section</button>
+                    <button class="tab-button" onclick="showTab('contact')">Contact Info</button>
+                    <button class="tab-button" onclick="showTab('images')">Images</button>
+                </div>
+
+                <!-- Hero Section Tab -->
+                <div id="hero-tab" class="tab-content active">
+                    <h3>Hero Section Content</h3>
+                    <p>Update your main headline and description:</p>
+                    
+                    <div class="form-group">
+                        <label for="hero-title">Main Headline:</label>
+                        <input type="text" id="hero-title" value="Formula Brewing" placeholder="Your brewery name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hero-subtitle">Subtitle:</label>
+                        <textarea id="hero-subtitle" rows="3" placeholder="A brief description of your brewery">Crafting exceptional beers with precision and passion</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hero-button">Button Text:</label>
+                        <input type="text" id="hero-button" value="Explore Our Beers" placeholder="Call-to-action button text">
+                    </div>
+                </div>
+
+                <!-- About Section Tab -->
+                <div id="about-tab" class="tab-content">
+                    <h3>About Section Content</h3>
+                    <p>Update your brewery's story and statistics:</p>
+                    
+                    <div class="form-group">
+                        <label for="about-title">Section Title:</label>
+                        <input type="text" id="about-title" value="About Formula Brewing" placeholder="About section title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="about-text">About Text:</label>
+                        <textarea id="about-text" rows="6" placeholder="Tell your brewery's story">At Formula Brewing, we combine scientific precision with artistic creativity to craft beers that push boundaries and delight palates. Our state-of-the-art facility and passionate team work together to create unique, high-quality brews that reflect our commitment to excellence.</textarea>
+                    </div>
+                    
+                    <div class="stats-section">
+                        <h4>Statistics (3 columns):</h4>
+                        <div class="stats-grid">
+                            <div class="stat-input">
+                                <label for="stat1-number">Stat 1 Number:</label>
+                                <input type="text" id="stat1-number" value="15+" placeholder="e.g., 15+">
+                            </div>
+                            <div class="stat-input">
+                                <label for="stat1-label">Stat 1 Label:</label>
+                                <input type="text" id="stat1-label" value="Beer Varieties" placeholder="e.g., Beer Varieties">
+                            </div>
+                            <div class="stat-input">
+                                <label for="stat2-number">Stat 2 Number:</label>
+                                <input type="text" id="stat2-number" value="24/7" placeholder="e.g., 24/7">
+                            </div>
+                            <div class="stat-input">
+                                <label for="stat2-label">Stat 2 Label:</label>
+                                <input type="text" id="stat2-label" value="Fresh Updates" placeholder="e.g., Fresh Updates">
+                            </div>
+                            <div class="stat-input">
+                                <label for="stat3-number">Stat 3 Number:</label>
+                                <input type="text" id="stat3-number" value="100%" placeholder="e.g., 100%">
+                            </div>
+                            <div class="stat-input">
+                                <label for="stat3-label">Stat 3 Label:</label>
+                                <input type="text" id="stat3-label" value="Craft Quality" placeholder="e.g., Craft Quality">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section Tab -->
+                <div id="contact-tab" class="tab-content">
+                    <h3>Contact Information</h3>
+                    <p>Update your brewery's contact details:</p>
+                    
+                    <div class="form-group">
+                        <label for="contact-name">Brewery Name:</label>
+                        <input type="text" id="contact-name" value="Formula Brewing" placeholder="Your brewery name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-address">Address:</label>
+                        <textarea id="contact-address" rows="2" placeholder="Your brewery address">[Your Address Here]</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-phone">Phone:</label>
+                        <input type="text" id="contact-phone" value="[Your Phone]" placeholder="Your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-email">Email:</label>
+                        <input type="email" id="contact-email" value="info@formulabrewing.com" placeholder="Your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-hours">Hours:</label>
+                        <input type="text" id="contact-hours" value="Mon-Sun: 11AM-10PM" placeholder="Your business hours">
+                    </div>
+                </div>
+
+                <!-- Images Tab -->
+                <div id="images-tab" class="tab-content">
+                    <h3>Website Images</h3>
+                    <p>Replace these images with your own:</p>
+                    
+                    <div class="image-section">
+                        <h4>📸 Required Images:</h4>
+                        <div class="image-list">
+                            <div class="image-item">
+                                <strong>Logo (logo.png)</strong>
+                                <p>Your brewery logo - used in navigation and footer</p>
+                                <p class="image-specs">Recommended: 200x80px, transparent background</p>
+                            </div>
+                            <div class="image-item">
+                                <strong>Hero Image (hero-brewery.jpg)</strong>
+                                <p>Main background image for the hero section</p>
+                                <p class="image-specs">Recommended: 1200x800px, high quality</p>
+                            </div>
+                            <div class="image-item">
+                                <strong>About Image (about-brewery.jpg)</strong>
+                                <p>Image for the about section</p>
+                                <p class="image-specs">Recommended: 800x600px, team or facility photo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="upload-instructions">
+                            <h4>📁 How to Upload Images:</h4>
+                            <ol>
+                                <li>Prepare your images with the correct names</li>
+                                <li>Upload them to the <code>assets/</code> folder</li>
+                                <li>Replace the existing placeholder files</li>
+                                <li>Refresh your website to see the changes</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="content-section">
+                <h2>⚡ Quick Actions</h2>
+                <div class="quick-actions">
+                    <button onclick="previewChanges()" class="action-button primary">
+                        👁️ Preview Changes
+                    </button>
+                    <button onclick="saveToGoogleSheets()" class="action-button secondary">
+                        💾 Save to Google Sheets
+                    </button>
+                    <button onclick="exportContent()" class="action-button secondary">
+                        📄 Export Content
+                    </button>
+                    <button onclick="resetToDefaults()" class="action-button warning">
+                        🔄 Reset to Defaults
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html> 

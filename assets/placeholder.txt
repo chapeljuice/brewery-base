@@ -1,0 +1,40 @@
+# Assets Directory
+
+This folder should contain the following images for the Formula Brewing website:
+
+## Required Images:
+
+1. **logo.png** - Formula Brewing logo (recommended size: 200x80px)
+   - Used in navigation and footer
+   - Should be transparent background if possible
+
+2. **fb-logo-white.png** - Hero section logo (recommended size: 300x300px)
+   - White/light colored version of your logo
+   - Used as centered parallax element in hero
+   - Should be transparent background (PNG format)
+
+3. **hero-brewery.jpg** - Hero section background image (recommended size: 1920x1080px)
+   - Full-screen background image
+   - Shows the brewery facility or brewing process
+   - High quality, professional photo
+
+4. **about-brewery.jpg** - About section image (recommended size: 800x600px)
+   - Team photo or brewing equipment
+   - Should complement the about section text
+
+## Optional Images:
+
+4. **favicon.ico** - Website favicon (16x16px or 32x32px)
+   - Small brewery logo or beer icon
+
+## Image Guidelines:
+
+- Use high-quality, professional photos
+- Optimize images for web (compress to reduce file size)
+- Consider using WebP format for better performance
+- Ensure images are properly licensed for commercial use
+- Maintain consistent aspect ratios where possible
+
+## Current Status:
+
+The website will work without these images, but they will show as broken image placeholders. Replace these placeholder files with actual Formula Brewing images for the complete demo experience. 
