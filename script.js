@@ -1,7 +1,7 @@
 // Google Sheets Configuration
-// Replace this with your actual Google Sheets ID and API key
-const GOOGLE_SHEETS_ID = 'unknown';
-const GOOGLE_API_KEY = 'unknown';
+// Uses local config if available, otherwise falls back to demo mode
+const GOOGLE_SHEETS_ID = window.LOCAL_CONFIG ? window.LOCAL_CONFIG.GOOGLE_SHEETS_ID : 'unknown';
+const GOOGLE_API_KEY = window.LOCAL_CONFIG ? window.LOCAL_CONFIG.GOOGLE_API_KEY : 'unknown';
 
 // Demo data for when Google Sheets is not configured
 const DEMO_BEERS = [

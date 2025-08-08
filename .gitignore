@@ -11,6 +11,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 config.js
+config-local.js
 
 # API Keys and sensitive data
 **/api-keys.txt
