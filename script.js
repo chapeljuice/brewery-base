@@ -117,7 +117,7 @@ async function loadFromGoogleSheets() {
         name: row[0] || '',
         type: row[1] || '',
         abv: row[2] || '',
-        ibu: row[3] || '',
+        rating: row[3] || '',
         status: row[4] || 'available',
         description: row[5] || ''
     }));
@@ -166,8 +166,8 @@ function createBeerCard(beer) {
                 <span class="detail-value">${beer.abv}</span>
             </div>
             <div class="beer-detail">
-                <span class="detail-label">IBU</span>
-                <span class="detail-value">${beer.ibu}</span>
+                <span class="detail-label">Untappd Rating</span>
+                <span class="detail-value">${beer.rating}</span>
             </div>
         </div>
         
